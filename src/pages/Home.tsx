@@ -64,11 +64,12 @@ export function Home() {
                         onChange={event => setRoomCode(event.target.value)}
                         value={roomCode}
                         />
-                    </form>
-                    
+                        
                     <Button onClick={ handleJoinRoom } type="submit">
                         Entrar na sala
                     </Button>
+                    </form>
+                    
                 </div>
             </main>
         </div>

@@ -21,22 +21,22 @@ export function Home() {
     }
 
     
-    async function handleJoinRoom(event: FormEvent){
-        event.preventDefault();
-        
-        if(roomCode.trim() === '') {
-            return;
-        }
+  async function handleJoinRoom(event: FormEvent) {
+    event.preventDefault();
 
-        const roomRef = await database.ref(`rooms/${roomCode}`).get();
-
-        if(!roomRef.exists()) {
-            alert('A sala não existe.');
-            return;
-        }
-        
-        history.push(`/rooms/${roomCode}`)
+    if (roomCode.trim() === '') {
+      return;
     }
+
+    const roomRef = await database.ref(`rooms/${roomCode}`).get();
+
+    if (!roomRef.exists()) {
+      alert('Room does not exists.');
+      return;
+    }
+
+    history.push(`/rooms/${roomCode}`);
+  }
 
     return(
         <div id="page-auth">

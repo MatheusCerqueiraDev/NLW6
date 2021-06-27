@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import googleIcon from "../assets/images/google-icon.svg"
 import illustrationImg from "../assets/images/illustration.svg"
 import logoImg from "../assets/images/logo.svg"
@@ -35,6 +35,11 @@ export function Home() {
       return;
     }
 
+    if(roomRef.val().closedAt){
+        alert('Room already closed');
+        return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   }
 
@@ -49,7 +54,7 @@ export function Home() {
 
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask"/>
+                <Link to="/"><img src={logoImg} alt="Letmeask Logo"/></Link>
 
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIcon} alt="Logo do Google"/>

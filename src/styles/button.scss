@@ -19,6 +19,17 @@
 
     }
 
+    &.outlined {
+        background: #FFF;
+        border: 1px solid #835afd;
+        color:#835afd;
+    }
+
+    &.outlined:hover {
+        border:1px solid #F0446C;
+        color:#F0446C;
+    }
+
     &:not(:disabled):hover{
         filter: brightness(0.9);
     }
